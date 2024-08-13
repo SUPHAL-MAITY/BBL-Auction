@@ -20,6 +20,14 @@ const playerSchema = new Schema({
         type: String,
        
       },
+      U20:{
+        type: String,
+
+      },
+     A40:{
+        type: String,
+
+      },
       role: {
         type: String,
       },
