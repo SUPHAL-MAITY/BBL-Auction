@@ -13,7 +13,7 @@ const playerSchema = new Schema({
         
       },
       cityName: {
-        type: Number,
+        type: String,
         
       },
       district: {
