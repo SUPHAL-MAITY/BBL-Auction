@@ -1,3 +1,5 @@
+import Dashboard from "./components/Dashboard.jsx"
+import EditForm from "./components/EditForm.jsx"
 import Home from "./components/Home.jsx"
 import Navbar from "./components/Navbar.jsx"
 import Players from "./components/Players.jsx"
@@ -33,6 +35,8 @@ function App() {
              <Route path='/'  element={<Home/>} />
              <Route path='/players'  element={<Players/>} />
              <Route path='/teams/:team'  element={<TeamsDashboard/>} />
+             <Route path='/dashboard'  element={<Dashboard/>} />
+             <Route path='/dashboard/:id'  element={<EditForm/>} />
            
              <Route path='*' element={<PageNotFound/>}/>
 

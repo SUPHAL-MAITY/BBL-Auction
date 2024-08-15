@@ -14,7 +14,23 @@ const teamSchema=new Schema({
     },
     slug:{
         type:String,
+    },
+    spentAmount:{
+        type:Number,
+    },
+    
+    U20:{
+        type:Number,
+    },
+    A40:{
+        type:Number,
+
+    },
+    playersNumber:{
+        type:Number,
     }
+
+    
   
    
 },{timestamps:true})
