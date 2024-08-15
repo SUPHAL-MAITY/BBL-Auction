@@ -1,13 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState ,useRef} from "react";
 import axios from "axios";
 
 const Players = () => {
 
     const[players,setPlayers]=useState([])
 
+    
+
    useEffect(()=>{
-    getAllPlayers();
-   },[players])
+      getAllPlayers();
+      
+   },[])
 
     const getAllPlayers=async()=>{
         try {
@@ -34,8 +37,8 @@ const Players = () => {
     <div className="-m-1.5 overflow-x-auto">
       <div className="p-1.5 min-w-full inline-block align-middle">
         <div className="overflow-hidden">
-          <table className="min-w-full divide-y divide-gray-200">
-            <thead>
+          <table className="min-w-full  divide-y divide-gray-200">
+            <thead className="bg-cyan-100">
               <tr>
                 <th scope="col" className="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase">Name</th>
                 

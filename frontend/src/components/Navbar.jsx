@@ -13,7 +13,7 @@ const [isOpen, setIsOpen] = useState(false);
 
   return (
     <>
-     <nav className="flex bg-cyan-600 items-center justify-between flex-wrap p-6">
+     <nav className="flex  bg-cyan-600 items-center justify-between  p-6">
      
      <div className="block lg:hidden">
        <button
@@ -37,7 +37,7 @@ const [isOpen, setIsOpen] = useState(false);
        </button>
      </div>
      <div
-       className={`w-full block  flex-grow lg:flex lg:items-center lg:w-auto ${isOpen ? "block" : "hidden"}`}
+       className={`w-full block  flex-grow  lg:flex lg:items-center lg:w-auto ${isOpen ? "block" : "hidden"}`}
      >
        <div className="text-sm lg:flex-grow">
          <a href="/" className="block text-lg font-serif mt-4 lg:inline-block lg:mt-0 font-bold text-white mr-4">
@@ -46,7 +46,7 @@ const [isOpen, setIsOpen] = useState(false);
          <a href="/players" className="block text-lg font-serif mt-4 lg:inline-block lg:mt-0 font-bold text-white mr-4">
            Players
          </a>
-         <a href="/teams" className="block text-lg font-serif  mt-4 lg:inline-block lg:mt-0 font-bold text-white mr-4">
+         <a href="/teams/a-to-z" className="block text-lg font-serif  mt-4 lg:inline-block lg:mt-0 font-bold text-white mr-4">
            Teams
          </a>
          <a href="/dashboard" className="block text-lg font-serif mt-4 lg:inline-block lg:mt-0 font-bold text-white mr-4">

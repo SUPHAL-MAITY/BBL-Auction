@@ -1,6 +1,7 @@
 import Home from "./components/Home.jsx"
 import Navbar from "./components/Navbar.jsx"
 import Players from "./components/Players.jsx"
+import TeamsDashboard from "./components/TeamsDashboard.jsx"
 import Layout from "./Layout/Layout.jsx"
 import PageNotFound from "./Layout/pageNotFound.jsx"
 
@@ -31,6 +32,7 @@ function App() {
       <Route path='/'  element={<Layout/>} >
              <Route path='/'  element={<Home/>} />
              <Route path='/players'  element={<Players/>} />
+             <Route path='/teams/:team'  element={<TeamsDashboard/>} />
            
              <Route path='*' element={<PageNotFound/>}/>
 

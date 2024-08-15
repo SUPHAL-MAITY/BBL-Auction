@@ -51,6 +51,10 @@ const playerSchema = new Schema({
         type: String,
 
       },
+      slug: {
+        type: String,
+
+      },
 
 },{timestamps:true})
 

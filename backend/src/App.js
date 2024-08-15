@@ -23,9 +23,13 @@ app.use(cookieParser())
 
 import authRouter from  "./routes/authRoutes.js"
 import playerRouter from  "./routes/playerRoutes.js"
+import teamRouter from  "./routes/teamRoutes.js"
+
+
 
 app.use("/api/user",authRouter)
 app.use("/api/user",playerRouter)
+app.use("/api/team",teamRouter)
 
 
 
