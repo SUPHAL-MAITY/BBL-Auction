@@ -1,6 +1,7 @@
 import Dashboard from "./components/Dashboard.jsx"
 import EditForm from "./components/EditForm.jsx"
 import Home from "./components/Home.jsx"
+import Login from "./components/Login.jsx"
 import Navbar from "./components/Navbar.jsx"
 import Players from "./components/Players.jsx"
 import TeamsDashboard from "./components/TeamsDashboard.jsx"
@@ -34,9 +35,10 @@ function App() {
       <Route path='/'  element={<Layout/>} >
              <Route path='/'  element={<Home/>} />
              <Route path='/players'  element={<Players/>} />
+             <Route path='/login'  element={<Login/>} />
              <Route path='/teams/:team'  element={<TeamsDashboard/>} />
-             <Route path='/dashboard'  element={<Dashboard/>} />
-             <Route path='/dashboard/:id'  element={<EditForm/>} />
+             <Route path='/iuw4g4V3jlcs47lZUvHhww=='  element={<Dashboard/>} />
+             <Route path='/iuw4g4V3jlcs47lZUvHhww==/:id'  element={<EditForm/>} />
            
              <Route path='*' element={<PageNotFound/>}/>
 

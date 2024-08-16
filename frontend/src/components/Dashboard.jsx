@@ -66,7 +66,7 @@ const Dashboard = () => {
                 <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800">{c.team} </td>
                 
                 <td className="px-6 py-4 whitespace-nowrap text-end text-sm font-medium">
-                  <button type="button"  onClick={()=>navigate(`/dashboard/${c._id}`)} className="inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent text-blue-600 hover:text-blue-800 focus:outline-none focus:text-blue-800 disabled:opacity-50 disabled:pointer-events-none">Edit</button>
+                  <button type="button"  onClick={()=>navigate(`/iuw4g4V3jlcs47lZUvHhww==/${c._id}`)} className="inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent text-blue-600 hover:text-blue-800 focus:outline-none focus:text-blue-800 disabled:opacity-50 disabled:pointer-events-none">Edit</button>
                 </td>
               </tr>
 

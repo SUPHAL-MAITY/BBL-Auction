@@ -19,7 +19,7 @@ const EditForm = () => {
       if (data) {
         alert("player has been updated");
       }
-      navigate("/");
+      navigate("/iuw4g4V3jlcs47lZUvHhww==");
     } catch (error) {
       console.log(error);
     }
