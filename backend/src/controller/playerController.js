@@ -22,6 +22,7 @@ const getAllPlayers=asyncHandler(async(req,res)=>{
 
 const getImagesByTeam=asyncHandler(async(req,res)=>{
     const {teamName}=req.params;
+    console.log("getimage")
 
     const url=await Teams.findOne({slug:teamName})
 
@@ -51,6 +52,10 @@ const getPlayersByTeam=asyncHandler(async(req,res)=>{
 
 
 })
+
+
+
+
 
 
 export {getAllPlayers,getPlayersByTeam,getImagesByTeam}

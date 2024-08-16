@@ -24,18 +24,18 @@ app.use(cookieParser())
 import authRouter from  "./routes/authRoutes.js"
 import playerRouter from  "./routes/playerRoutes.js"
 import teamRouter from  "./routes/teamRoutes.js"
+import homeRouter from  "./routes/homeRoutes.js"
 
 
 
 app.use("/api/user",authRouter)
 app.use("/api/user",playerRouter)
 app.use("/api/team",teamRouter)
+app.use("/api/home",homeRouter)
 
 
 
-app.get("/",(req,res)=>{
-    res.send("Hello world")
-})
+
 
 
 export { app }
