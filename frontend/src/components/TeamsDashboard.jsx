@@ -6,7 +6,7 @@ const TeamsDashboard = () => {
 
 
   return (
-    <div className="flex  ">
+    <div className="flex ">
       <div className="">
       <Sidebar />
 

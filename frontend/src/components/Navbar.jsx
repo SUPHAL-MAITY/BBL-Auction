@@ -56,9 +56,9 @@ const [isOpen, setIsOpen] = useState(false);
        
       
      </div>
-     <div>
-        <h1 className={`text-yellow-400 font-serif text-3xl  ${isOpen ?"hidden"  : "block"}`}>Welcome to the BBL</h1>
-       </div>
+     <div className="text-center sm:text-right">
+        <h1 className={`text-yellow-400 mr-10 font-serif text-3xl  ${isOpen ?"hidden"  : "block"}`}>Welcome To the BBL</h1>
+    </div>
    </nav>
     
     </>
