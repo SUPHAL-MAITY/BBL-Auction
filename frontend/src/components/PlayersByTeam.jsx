@@ -1,27 +1,21 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import {  useParams } from 'react-router-dom';
+import { useParams } from "react-router-dom";
 
 const PlayersByTeam = () => {
+  const [players, setPlayers] = useState([]);
+  const [url, setUrl] = useState(null);
 
-  const[players,setPlayers]=useState([])
-  const[url,setUrl]=useState(null)
-  
   const { team } = useParams();
 
-  
-
-  useEffect(()=>{
+  useEffect(() => {
     getAllPlayers();
     getUrl();
-    
-   },[team])
-
-
+  }, [team]);
 
   const getAllPlayers = async () => {
-    console.log(team)
-    
+    console.log(team);
+
     try {
       const { data } = await axios.get(
         `${import.meta.env.VITE_API}/api/user/${team}`
@@ -29,14 +23,11 @@ const PlayersByTeam = () => {
       setPlayers(data?.data?.players);
       console.log(data.data);
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
   };
 
-
   const getUrl = async () => {
-  
-    
     try {
       const { data } = await axios.get(
         `${import.meta.env.VITE_API}/api/team/${team}`
@@ -44,23 +35,16 @@ const PlayersByTeam = () => {
       setUrl(data?.data?.image);
       console.log(data.data);
     } catch (error) {
-       console.log(error)
-
+      console.log(error);
     }
   };
 
-
-
-
-
   return (
-    <div>
-
-      <div className="mx-14 my-4 sm:mx-36 sm:my-4">
-         <img style={{ width: 60, height: 60 }} src={url} alt="React Logo" />
-         
+    <div className="bg-slate-100">
+      <div className="mx-14 my-4 ">
+        <img style={{ width: 100, height: 100 }} src={url} alt=" Logo" />
       </div>
-      
+
       <div className="flex flex-col">
         <div className="-m-1.5 overflow-x-auto">
           <div className="p-1.5 min-w-full inline-block align-middle">
@@ -87,15 +71,13 @@ const PlayersByTeam = () => {
                     >
                       A40
                     </th>
-                   
+
                     <th
                       scope="col"
                       className="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase"
                     >
                       Sold Price
                     </th>
-                  
-                    
                   </tr>
                 </thead>
                 <tbody>
@@ -103,6 +85,7 @@ const PlayersByTeam = () => {
                     <tr className="odd:bg-white even:bg-gray-100" key={i}>
                       <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800">
                         {c.name}
+                       
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800">
                         {c.U20}
@@ -110,13 +93,10 @@ const PlayersByTeam = () => {
                       <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800">
                         {c.A40}
                       </td>
-                     
+
                       <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800">
                         {c.soldPrice}
                       </td>
-                     
-
-                      
                     </tr>
                   ))}
                 </tbody>
