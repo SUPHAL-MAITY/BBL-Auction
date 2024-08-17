@@ -56,6 +56,12 @@ const PlayersByTeam = () => {
                       scope="col"
                       className="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase"
                     >
+                     Sl
+                    </th>
+                    <th
+                      scope="col"
+                      className="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase"
+                    >
                       Name
                     </th>
 
@@ -83,6 +89,10 @@ const PlayersByTeam = () => {
                 <tbody>
                   {players.map((c, i) => (
                     <tr className="odd:bg-white even:bg-gray-100" key={i}>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800">
+                        {c.sl}
+                       
+                      </td>
                       <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800">
                         {c.name}
                        

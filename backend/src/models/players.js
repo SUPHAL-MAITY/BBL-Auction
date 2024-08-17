@@ -4,6 +4,10 @@ import mongoose,{Schema} from "mongoose";
 
 
 const playerSchema = new Schema({
+  sl: {
+    type: Number,
+    
+  },
     name: {
         type: String,
         required: [true, "name is required"],

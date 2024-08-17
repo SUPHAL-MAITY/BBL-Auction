@@ -39,6 +39,7 @@ const Dashboard = () => {
           <table className="min-w-full  divide-y divide-gray-200">
             <thead className="bg-cyan-100">
               <tr>
+                <th scope="col" className="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase">Sl</th>
                 <th scope="col" className="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase">Name</th>
                 
                 <th scope="col" className="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase">U20</th>
@@ -55,6 +56,7 @@ const Dashboard = () => {
             <tbody>
               {players.map((c,i)=>(
                 <tr className="odd:bg-white even:bg-gray-100" key={i}>
+                <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800">{c.sl}</td>
                 <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800">{c.name}</td>
                 <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800">{c.U20} </td>
                 <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800">{c.A40}</td>
