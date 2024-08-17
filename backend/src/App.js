@@ -9,7 +9,11 @@ const app = express()
 
 app.use(cors({
     // origin: process.env.CORS_ORIGIN,
+<<<<<<< HEAD
     // origin:  "http://localhost:5173",
+=======
+    //origin:  "http://localhost:5173",
+>>>>>>> 09e5264bccde7c5c8fead67979c5e32564940d54
     origin:  'https://bbl-auction-frontend.onrender.com',
     credentials: true
 }))
