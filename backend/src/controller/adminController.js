@@ -7,6 +7,9 @@ import { Teams } from "../models/teams.js";
 const editPlayer=asyncHandler(async(req,res)=>{
 
      const {price,team,slug}=req.body;
+      console.log(price)
+      console.log(team)
+      console.log(slug)
      if(!price || !team || !slug ){
         throw new ApiError(400,"price ,team  or slug  is not available")
      }

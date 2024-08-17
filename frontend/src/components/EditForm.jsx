@@ -64,6 +64,7 @@ const EditForm = () => {
                         value={team}
                         onChange={(e) => setTeam(e.target.value)}
                       >
+                        <option value="" disabled >unsold</option>
                         <option value="A TO Z">A TO Z</option>
                         <option value="AGRANI SANSKRITIK PARISHAD">AGRANI SANSKRITIK PARISHAD</option>
                         <option value="AMIT X1 ANDAL">AMIT X1 ANDAL</option>
@@ -99,6 +100,7 @@ const EditForm = () => {
                         value={slug}
                         onChange={(e) => setSlug(e.target.value)}
                       >
+                        <option value="" disabled >unsold</option>
                         <option value="a-to-z">a-to-z</option>
                         <option value="agrani-sanskritik-parishad">agrani-sanskritik-parishad</option>
                         <option value="amit-x1-andal">amit-x1-andal</option>
