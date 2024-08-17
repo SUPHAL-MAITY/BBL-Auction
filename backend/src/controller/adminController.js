@@ -14,26 +14,90 @@ const editPlayer=asyncHandler(async(req,res)=>{
         throw new ApiError(400,"price ,team  or slug  is not available")
      }
 
-    const {id}= req.params;
     
 
-    const player=await Players.findByIdAndUpdate(id, {soldPrice:price, team:team,slug},{new:true})
+    const {id}= req.params;
 
-    if(!player){
+    const player =await Players.findById({_id:id})
+
+    const oldPrice= player.soldPrice;
+    const newPrice=price;
+
+    console.log(oldPrice)
+    console.log(newPrice)
+
+
+    const oldTeam= player.team ;
+    const newTeam=team
+
+    console.log(oldTeam)
+    console.log(newTeam)
+
+
+    const toBeIncreasedAmount= (newPrice-oldPrice);
+
+    console.log(toBeIncreasedAmount)
+
+    
+    
+    
+    const updatedPlayer=await Players.findByIdAndUpdate(id, {soldPrice:price, team:team,slug},{new:true})
+
+    if(!updatedPlayer){
         throw new ApiError(400,"player has not been updated")
 
     }
 
-    const numberUpdate =await Teams.findOneAndUpdate({name:team}, 
-        { $inc: { playersNumber: 1, spentAmount:price, U20:player.U20=="Yes"?1:0 , A40 :player.A40=="Yes"? 1:0 }},
-        {new:true})
-    
-    if(!numberUpdate){
-        throw new ApiError(400,"Number has not been updated")
-    }
+
     
 
-    return res.status(200).json(new ApiResponse(200,{},"players  and team updated  successfully"))
+
+    if(oldTeam==newTeam){
+
+        const numberUpdate =await Teams.findOneAndUpdate({name:team}, 
+            { $inc: {  spentAmount:toBeIncreasedAmount }},
+            {new:true})
+
+
+            if(!numberUpdate){
+                throw new ApiError(400,"Number has not been updated")
+            }
+
+        
+
+    }else{
+        const newTeamNumberUpdate =await Teams.findOneAndUpdate({name:team}, 
+            { $inc: { playersNumber:  1 , spentAmount: price , U20: (player.U20)=="Yes" ? 1:0 , A40 :(player.A40=="Yes" )  ? 1:0 }},
+            {new:true})
+        if(!newTeamNumberUpdate){
+                throw new ApiError(400," new team Number has not been updated")
+            }
+
+        if(oldTeam !== "unsold"){
+
+        const oldTeamNumberUpdate =await Teams.findOneAndUpdate({name:oldTeam}, 
+                { $inc: { playersNumber:  -1 , spentAmount: -oldPrice , U20: (player.U20)=="Yes" ? -1:0 , A40 :(player.A40=="Yes" )  ? -1:0 }},
+                {new:true})
+        if(!oldTeamNumberUpdate){
+                    throw new ApiError(400," old team Number has not been updated")
+                }
+
+        }
+
+       
+
+    }
+
+    
+
+
+    
+   
+   
+   
+    
+
+return res.status(200).json(new ApiResponse(200,{},"players  and team updated  successfully"))
 
 })
 
