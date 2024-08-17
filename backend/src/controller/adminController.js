@@ -7,9 +7,9 @@ import { Teams } from "../models/teams.js";
 const editPlayer=asyncHandler(async(req,res)=>{
 
      const {price,team,slug}=req.body;
-      console.log(price)
-      console.log(team)
-      console.log(slug)
+    //   console.log(price)
+    //   console.log(team)
+    //   console.log(slug)
      if(!price || !team || !slug ){
         throw new ApiError(400,"price ,team  or slug  is not available")
      }
@@ -38,6 +38,23 @@ const editPlayer=asyncHandler(async(req,res)=>{
 })
 
 
-export {editPlayer}
+const getSinglePlayer=asyncHandler(async(req,res)=>{
+    const {id}=req.params;
+
+    const player=await Players.findOne({_id:id})
+
+    if(!player){
+        throw new ApiError(400,"No Players found while finding one player in admincontroller")
+    }
+
+    return res.status(200).json(new ApiResponse(200,player,"single player  obtained successfully")
+
+    )
+
+
+})
+
+
+export {editPlayer,getSinglePlayer}
 
 
