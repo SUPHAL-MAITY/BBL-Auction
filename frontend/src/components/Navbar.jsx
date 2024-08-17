@@ -63,16 +63,16 @@ const Navbar = () => {
         </div>
         <div className="text-center sm:text-right">
           <h1
-            className={`text-yellow-400 mr-10 font-serif text-3xl  ${
+            className={`text-yellow-400 mr-10 font-serif text-2xl  ${
               isOpen ? "hidden" : "block"
             }`}
           >
-            Welcome To The BBPL
+            Welcome to BBPL Live Auction
           </h1>
         </div>
         <div className="">
           <img
-            src="https://res.cloudinary.com/dobdrg18h/image/upload/v1723809962/IMG-20240805-WA0042_1_1_cdt0o0.jpg"
+            src="https://res.cloudinary.com/dobdrg18h/image/upload/v1723892598/auction_mrmesv.jpg"
             style={{ widht: "60px", height: "60px", borderRadius: "60px" }}
           />
         </div>
