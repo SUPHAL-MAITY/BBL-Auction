@@ -16,6 +16,7 @@ const EditForm = () => {
         `${import.meta.env.VITE_API}/api/team/${id}`,
         { price, team,slug }
       );
+      console.log(data.data)
       if (data) {
         alert("player has been updated");
       }
