@@ -9,13 +9,20 @@ import HomoeDashboard from "./HomoeDashboard";
 
 const Home = () => {
   return (
-    <div>
-        
-     
-      <HomoeDashboard/>
+    <div className="">
 
-     
-    </div>
+    
+  
+
+
+    <HomoeDashboard/>
+
+
+
+
+    
+
+  </div>
   );
 };
 

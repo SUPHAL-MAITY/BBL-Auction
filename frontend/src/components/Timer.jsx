@@ -7,7 +7,7 @@ const Timer = () => {
   const [minutes, setMinutes] = useState(0);
   const [seconds, setSeconds] = useState(0);
 
-  const deadline = "August, 18, 2024";
+  const deadline = "August 18, 2024 9:00 AM";
 
   const getTime = () => {
     const time = Date.parse(deadline) - Date.now();
@@ -25,8 +25,9 @@ const Timer = () => {
   }, []);
 
   return (
-    <div className="text-white  bg-gradient-to-r  from-indigo-500 via-purple-600 grid grid-flow-col gap-5 place-content-center auto-cols-max">
+    <div className="text-white  bg-gradient-to-r  from-indigo-500 via-purple-600 grid grid-flow-col gap-5 place-content-center auto-cols-max">    
       <div className="flex text-white flex-col p-2 bg-neutral rounded-box text-neutral-content">
+        
         <span className="countdown  font-mono text-5xl">
           {days < 10 ? "0" + days : days}
         </span>

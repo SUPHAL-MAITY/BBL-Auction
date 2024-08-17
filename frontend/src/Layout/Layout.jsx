@@ -7,7 +7,6 @@ import Navbar from '../components/Navbar.jsx'
 
 
 
-
 function Layout() {
   return (
     <>
