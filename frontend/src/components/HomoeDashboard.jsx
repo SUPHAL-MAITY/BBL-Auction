@@ -42,7 +42,7 @@ const HomoeDashboard = () => {
  
   return (
     <>
-    <Timer/>
+    
 
     
      <div className="flex flex-col ">
