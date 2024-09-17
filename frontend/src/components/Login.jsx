@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import axios from "axios";
 import {  useNavigate } from "react-router-dom";
@@ -8,12 +8,24 @@ import {  useNavigate } from "react-router-dom";
 const Login = () => {
 
 
+
+
+
   const [userName, setUserName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
+ 
 
+  useEffect(()=>{
+
+    const id = localStorage.getItem("id")
+    if(id){
+      navigate("/iuw4g4V3jlcs47lZUvHhww==");
+    }
+ 
+   },[])
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -26,6 +38,8 @@ const Login = () => {
       
       if (data) {
         alert("User logged in  successfully");
+        console.log(data)
+        localStorage.setItem("id",data?.data?._id)
       }
       console.log("user");
       

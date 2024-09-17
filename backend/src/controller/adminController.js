@@ -119,6 +119,31 @@ const getSinglePlayer=asyncHandler(async(req,res)=>{
 })
 
 
+
+const createPlayer=asyncHandler(async(req,res)=>{
+
+
+    const {sl,name,nickName}=req.body
+
+    if(!title || !location){
+        throw new ApiError(400,"please provide title and address")
+    }
+
+    const newRestaurant=new Restaurant({
+        title,imageUrl,foods,pickup,delivery,isOpen,logoUrl,rating,ratingCount,location,owner:req.user._id
+    })
+    
+    await newRestaurant.save()
+
+    res.status(200).json(new ApiResponse(200,{},"New  restaurant created successfully"))
+
+
+
+
+
+
+})
+
 export {editPlayer,getSinglePlayer}
 
 
