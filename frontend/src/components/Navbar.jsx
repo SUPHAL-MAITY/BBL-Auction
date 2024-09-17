@@ -1,9 +1,37 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 // import { Link, useNavigate } from "react-router-dom";
 // import { FaBars, FaTimes } from "react-icons/fa";
+import {  useNavigate } from "react-router-dom";
+
 
 const Navbar = () => {
+
+ 
+
   const [isOpen, setIsOpen] = useState(false);
+  const  [id,setId]=useState("")
+  const navigate = useNavigate();
+  
+ 
+
+  useEffect(()=>{
+
+    const id = localStorage.getItem("id")
+    setId(id)
+   
+ 
+   },[])
+
+
+   const handleLogout=()=>{
+    console.log("log out")
+    localStorage.removeItem("id")
+    setId("")
+    navigate("/")
+   }
+
+
+
 
   return (
     <>
@@ -59,6 +87,15 @@ const Navbar = () => {
             >
               Admin
             </a>
+            <button
+              
+              className="block text-lg font-serif mt-4 lg:inline-block lg:mt-0 font-bold text-white mr-4"
+              onClick={()=>handleLogout()}
+            >
+              {id? "Logout":""}
+            </button>
+
+
           </div>
         </div>
         <div className="text-center sm:text-right">

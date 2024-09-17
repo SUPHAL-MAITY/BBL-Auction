@@ -23,7 +23,9 @@ const Login = () => {
     const id = localStorage.getItem("id")
     if(id){
       navigate("/iuw4g4V3jlcs47lZUvHhww==");
+      
     }
+   
  
    },[])
 
@@ -39,7 +41,8 @@ const Login = () => {
       if (data) {
         alert("User logged in  successfully");
         console.log(data)
-        localStorage.setItem("id",data?.data?._id)
+        localStorage.setItem("id",data?.data?._id,1000)
+        window.location.reload()
       }
       console.log("user");
       
