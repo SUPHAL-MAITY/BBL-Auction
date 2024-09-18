@@ -24,6 +24,25 @@ const Dashboard = () => {
               
           }
       }
+
+  const handleDelete=async(id)=>{
+      console.log(id)
+
+      try {
+        await  axios.delete(
+          `${import.meta.env.VITE_API}/api/team/${id}`
+        );
+       
+        navigate("/");
+        
+      } catch (error) {
+        console.log(error);
+      }
+    
+
+    
+
+  }
   
 
 
@@ -50,6 +69,7 @@ const Dashboard = () => {
                 <th scope="col" className="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase">Contacts</th>
                 <th scope="col" className="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase">Sold Price</th>
                 <th scope="col" className="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase">Team</th>
+                <th scope="col" className="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase">Delete</th>
                 <th scope="col" className="px-6 py-3 text-end text-xs font-medium text-gray-500 uppercase">Action</th>
               </tr>
             </thead>
@@ -66,6 +86,12 @@ const Dashboard = () => {
                 <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800">{c.whatsAppNo} </td>
                 <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800">{c.soldPrice}</td>
                 <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800">{c.team} </td>
+                <button>
+                <td type="button" onClick={()=>handleDelete(c._id)} className="px-6 py-4 whitespace-nowrap text-sm text-red-600">X</td>
+
+                </button>
+                
+                
                 
                 <td className="px-6 py-4 whitespace-nowrap text-end text-sm font-medium">
                   <button type="button"  onClick={()=>navigate(`/iuw4g4V3jlcs47lZUvHhww==/${c._id}`)} className="inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent text-blue-600 hover:text-blue-800 focus:outline-none focus:text-blue-800 disabled:opacity-50 disabled:pointer-events-none">Edit</button>

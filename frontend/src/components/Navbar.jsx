@@ -31,6 +31,11 @@ const Navbar = () => {
    }
 
 
+   const addPlayer=()=>{
+    navigate("/addplayer")
+   }
+
+
 
 
   return (
@@ -81,12 +86,23 @@ const Navbar = () => {
             >
               Teams
             </a>
-            <a
+             <a
               href="/login"
               className="block text-lg font-serif mt-4 lg:inline-block lg:mt-0 font-bold text-white mr-4"
             >
               Admin
             </a>
+
+
+            <button
+              
+              className="block text-lg font-serif mt-4 lg:inline-block lg:mt-0 font-bold text-white mr-4"
+              onClick={()=>addPlayer()}
+            >
+              {id? "Add Player":""}
+            </button>
+            
+
             <button
               
               className="block text-lg font-serif mt-4 lg:inline-block lg:mt-0 font-bold text-white mr-4"
@@ -94,6 +110,7 @@ const Navbar = () => {
             >
               {id? "Logout":""}
             </button>
+           
 
 
           </div>

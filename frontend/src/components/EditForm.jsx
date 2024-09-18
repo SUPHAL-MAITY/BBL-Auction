@@ -101,7 +101,7 @@ useEffect(()=>{
                         htmlFor="countries"
                         className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                       >
-                        Select the Team
+                        
                       </label>
                       <select
                         id="countries"
@@ -109,7 +109,9 @@ useEffect(()=>{
                         value={team}
                         onChange={(e) => setTeam(e.target.value)}
                       >
-                        <option value="" disabled >unsold</option>
+
+                        <option value="" disabled >Select the Team</option>
+                        <option value="unsold"  >unsold</option>
                         <option value="A TO Z">A TO Z</option>
                         <option value="AGRANI SANSKRITIK PARISHAD">AGRANI SANSKRITIK PARISHAD</option>
                         <option value="AMIT X1 ANDAL">AMIT X1 ANDAL</option>
@@ -137,7 +139,7 @@ useEffect(()=>{
                         htmlFor="slug"
                         className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                       >
-                        Select the slug
+                        
                       </label>
                       <select
                         id="slug"
@@ -145,7 +147,9 @@ useEffect(()=>{
                         value={slug}
                         onChange={(e) => setSlug(e.target.value)}
                       >
-                        <option value="" disabled >unsold</option>
+                       
+                        <option value="" disabled >Select the slug</option>
+                        <option value="unsold"  >unsold</option>
                         <option value="a-to-z">a-to-z</option>
                         <option value="agrani-sanskritik-parishad">agrani-sanskritik-parishad</option>
                         <option value="amit-x1-andal">amit-x1-andal</option>

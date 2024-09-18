@@ -122,20 +122,22 @@ const getSinglePlayer=asyncHandler(async(req,res)=>{
 
 const createPlayer=asyncHandler(async(req,res)=>{
 
+   
 
-    const {sl,name,nickName}=req.body
 
-    if(!title || !location){
-        throw new ApiError(400,"please provide title and address")
+    const { sl,name, nickName, cityName, district, U20, A40, role, batting, bowling, whatsAppNo, basePrice}=req.body
+
+    if( !sl || !name || !nickName|| !cityName || !district || !U20 ||  !A40 ||  !role ||  !batting ||  !bowling ||  !whatsAppNo ||  !basePrice){
+        throw new ApiError(400,"please provide  all details of player")
     }
 
-    const newRestaurant=new Restaurant({
-        title,imageUrl,foods,pickup,delivery,isOpen,logoUrl,rating,ratingCount,location,owner:req.user._id
+    const newPlayer=new Players({
+        sl,name, nickName, cityName, district, U20, A40, role, batting, bowling, whatsAppNo, basePrice
     })
     
-    await newRestaurant.save()
+    await newPlayer.save()
 
-    res.status(200).json(new ApiResponse(200,{},"New  restaurant created successfully"))
+    res.status(200).json(new ApiResponse(200,newPlayer,"New  player created successfully"))
 
 
 
@@ -144,6 +146,21 @@ const createPlayer=asyncHandler(async(req,res)=>{
 
 })
 
-export {editPlayer,getSinglePlayer}
+
+
+
+
+const deleteController=asyncHandler(async(req,res)=>{
+    const {id}=req.params;
+    await Players.findByIdAndDelete({_id:id})
+
+    return res.status(200).json(new ApiResponse(200,{},"players  deleted  successfully"))
+    
+})
+
+
+
+
+export {editPlayer,getSinglePlayer,deleteController,createPlayer}
 
 

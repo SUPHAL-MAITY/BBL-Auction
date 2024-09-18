@@ -1,3 +1,4 @@
+import Addplayer from "./components/Addplayer.jsx"
 import Dashboard from "./components/Dashboard.jsx"
 import EditForm from "./components/EditForm.jsx"
 import Home from "./components/Home.jsx"
@@ -35,6 +36,7 @@ function App() {
       <Route path='/'  element={<Layout/>} >
              <Route path='/'  element={<Home/>} />
              <Route path='/players'  element={<Players/>} />
+             <Route path='/addplayer'  element={<Addplayer/>} />
              <Route path='/login'  element={<Login/>} />
              <Route path='/teams/:team'  element={<TeamsDashboard/>} />
              <Route path='/iuw4g4V3jlcs47lZUvHhww=='  element={<Dashboard/>} />

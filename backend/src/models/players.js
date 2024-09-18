@@ -50,13 +50,16 @@ const playerSchema = new Schema({
       },
       soldPrice: {
         type: Number,
+        default:0,
       },
       team: {
         type: String,
+        default:"unsold"
 
       },
       slug: {
         type: String,
+        default:"unsold"
 
       },
 
