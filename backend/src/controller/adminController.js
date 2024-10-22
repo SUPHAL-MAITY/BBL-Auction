@@ -18,30 +18,32 @@ const editPlayer=asyncHandler(async(req,res)=>{
 
     const {id}= req.params;
 
-    const player =await Players.findById({_id:id})
+    // const player =await Players.findById({_id:id})
 
-    const oldPrice= player.soldPrice;
-    const newPrice=price;
+    // const oldPrice= player.soldPrice;
+    // const newPrice=price;
 
-    console.log(oldPrice)
-    console.log(newPrice)
-
-
-    const oldTeam= player.team ;
-    const newTeam=team
-
-    console.log(oldTeam)
-    console.log(newTeam)
+    // console.log(oldPrice)
+    // console.log(newPrice)
 
 
-    const toBeIncreasedAmount= (newPrice-oldPrice);
+    // const oldTeam= player.team ;
+    // const newTeam=team
 
-    console.log(toBeIncreasedAmount)
+    // console.log(oldTeam)
+    // console.log(newTeam)
+
+
+    // const toBeIncreasedAmount= (newPrice-oldPrice);
+
+    // console.log(toBeIncreasedAmount)
 
     
     
     
-    const updatedPlayer=await Players.findByIdAndUpdate(id, {soldPrice:price, team:team,slug},{new:true})
+    // const updatedPlayer=await Players.findByIdAndUpdate(id, {soldPrice:price, team:team,slug},{new:true})
+    
+    const updatedPlayer=await Players.findByIdAndUpdate(id,{soldPrice:price,team,slug},{new:true})
 
     if(!updatedPlayer){
         throw new ApiError(400,"player has not been updated")
@@ -52,41 +54,41 @@ const editPlayer=asyncHandler(async(req,res)=>{
     
 
 
-    if(oldTeam==newTeam){
+    // if(oldTeam==newTeam){
 
-        const numberUpdate =await Teams.findOneAndUpdate({name:team}, 
-            { $inc: {  spentAmount:toBeIncreasedAmount }},
-            {new:true})
+    //     const numberUpdate =await Teams.findOneAndUpdate({name:team}, 
+    //         { $inc: {  spentAmount:toBeIncreasedAmount }},
+    //         {new:true})
 
 
-            if(!numberUpdate){
-                throw new ApiError(400,"Number has not been updated")
-            }
+    //         if(!numberUpdate){
+    //             throw new ApiError(400,"Number has not been updated")
+    //         }
 
         
 
-    }else{
-        const newTeamNumberUpdate =await Teams.findOneAndUpdate({name:team}, 
-            { $inc: { playersNumber:  1 , spentAmount: price , U20: (player.U20)=="Yes" ? 1:0 , A40 :(player.A40=="Yes" )  ? 1:0 }},
-            {new:true})
-        if(!newTeamNumberUpdate){
-                throw new ApiError(400," new team Number has not been updated")
-            }
+    // }else{
+    //     const newTeamNumberUpdate =await Teams.findOneAndUpdate({name:team}, 
+    //         { $inc: { playersNumber:  1 , spentAmount: price , U20: (player.U20)=="Yes" ? 1:0 , A40 :(player.A40=="Yes" )  ? 1:0 }},
+    //         {new:true})
+    //     if(!newTeamNumberUpdate){
+    //             throw new ApiError(400," new team Number has not been updated")
+    //         }
 
-        if(oldTeam !== "unsold"){
+    //     if(oldTeam !== "unsold"){
 
-        const oldTeamNumberUpdate =await Teams.findOneAndUpdate({name:oldTeam}, 
-                { $inc: { playersNumber:  -1 , spentAmount: -oldPrice , U20: (player.U20)=="Yes" ? -1:0 , A40 :(player.A40=="Yes" )  ? -1:0 }},
-                {new:true})
-        if(!oldTeamNumberUpdate){
-                    throw new ApiError(400," old team Number has not been updated")
-                }
+    //     const oldTeamNumberUpdate =await Teams.findOneAndUpdate({name:oldTeam}, 
+    //             { $inc: { playersNumber:  -1 , spentAmount: -oldPrice , U20: (player.U20)=="Yes" ? -1:0 , A40 :(player.A40=="Yes" )  ? -1:0 }},
+    //             {new:true})
+    //     if(!oldTeamNumberUpdate){
+    //                 throw new ApiError(400," old team Number has not been updated")
+    //             }
 
-        }
+    //     }
 
        
 
-    }
+    // }
 
     
 
@@ -97,7 +99,7 @@ const editPlayer=asyncHandler(async(req,res)=>{
    
     
 
-return res.status(200).json(new ApiResponse(200,{},"players  and team updated  successfully"))
+return res.status(200).json(new ApiResponse(200,{updatedPlayer},"player   updated  successfully"))
 
 })
 
@@ -125,14 +127,14 @@ const createPlayer=asyncHandler(async(req,res)=>{
    
 
 
-    const { sl,name, nickName, cityName, district, U20, A40, role, batting, bowling, whatsAppNo, basePrice}=req.body
+    const { sl,name, nickName, dob,address,pinCode, U20, A40, role, batting, bowling, whatsAppNo, basePrice}=req.body
 
-    if( !sl || !name || !nickName|| !cityName || !district || !U20 ||  !A40 ||  !role ||  !batting ||  !bowling ||  !whatsAppNo ||  !basePrice){
+    if( !sl || !name || !nickName|| !dob || !address || !pinCode  ||  !role ||  !batting ||  !bowling ||  !whatsAppNo ||  !basePrice){
         throw new ApiError(400,"please provide  all details of player")
     }
 
     const newPlayer=new Players({
-        sl,name, nickName, cityName, district, U20, A40, role, batting, bowling, whatsAppNo, basePrice
+        sl,name, nickName, dob,address,pinCode, U20, A40, role, batting, bowling, whatsAppNo, basePrice
     })
     
     await newPlayer.save()

@@ -8,6 +8,10 @@ import Timer from "./Timer";
 
 const HomoeDashboard = () => {
 
+  let playersToBuy=15;
+  let basePrice=1000;
+  let totalAuctionPrice=50000;
+
 
   const [teams,setTeams]=useState([])
 
@@ -24,9 +28,10 @@ const HomoeDashboard = () => {
 
   const getAllTeams=async()=>{
     try {
-        const {data}= await axios.get(`${import.meta.env.VITE_API}/api/home/all`);
+        const {data}= await axios.get(`${import.meta.env.VITE_API}/api/home/teams`);
         setTeams(data?.data?.teams)
         console.log(data?.data?.teams)
+        
         
         
     } catch (error) {
@@ -44,8 +49,7 @@ const HomoeDashboard = () => {
     <>
     
 
-    
-     <div className="flex flex-col ">
+  <div className="flex flex-col ">
     <div className="-m-1.5 overflow-x-auto">
       <div className="p-1.5 min-w-full inline-block align-middle">
         <div className="overflow-hidden">
@@ -56,9 +60,9 @@ const HomoeDashboard = () => {
                 
                 <th scope="col" className="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase">Amount Spent</th>
                 <th scope="col" className="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase">Remaining Amount</th>
-                <th scope="col" className="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase">40+</th>
-                <th scope="col" className="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase">20-</th>
+            
                 <th scope="col" className="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase">Total Players</th>
+                <th scope="col" className="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase">Max Bid</th>
         
               </tr>
             </thead>
@@ -66,11 +70,11 @@ const HomoeDashboard = () => {
               {teams.map((c,i)=>(
                 <tr className="odd:bg-white even:bg-gray-100" key={i}>
                 <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800">{c.name}</td>
-                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800">{c.spentAmount} </td>
-                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800">{50000 -c.spentAmount }</td>
-                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800">{c.A40} </td>
-                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800">{c.U20} </td>
-                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800">{c.playersNumber ? c.playersNumber:0} </td>
+                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800">{c.spentMoney} </td>
+                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800">{totalAuctionPrice -c.spentMoney }</td>
+               
+                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800">{c.totalPlayers? c.totalPlayers:0} </td>
+                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800">{ c.totalPlayers==15 ?0 :  (totalAuctionPrice -c.spentMoney)- ((playersToBuy-1-c.totalPlayers)*basePrice)} </td>
         
               </tr>
 

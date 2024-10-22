@@ -5,19 +5,14 @@ import axios from "axios";
 
 const Addplayer = () => {
 
-  // const [id,setId]=useState(null)
-  // const [previousId,setPrevviousId]=useState([])
-
-  // const [price, setPrice] = useState(0);
-  // const [team, setTeam] = useState("");
-  // const [slug, setSlug] = useState("");
+  
   const [sl,setSl]=useState(0)
   const [name, setName] = useState("");
   const [nickName,setNickName ] = useState("");
-  const [cityName,setCityName ] = useState("");
-  const [district,setDistrict ] = useState("");
-  const [U20,setU20] = useState("");
-  const [A40,setA40] = useState("");
+  const [dob,setDob ] = useState("");
+  const [address, setAddress] = useState("");
+  const [pinCode,setPinCode ] = useState("");
+  
   const [role,setRole] = useState("");
   const [batting,setBatting] = useState("");
   const [bowling,setBowling] = useState("");
@@ -25,7 +20,7 @@ const Addplayer = () => {
   const [basePrice,setBasePrice] = useState("");
  
 
-//sl,name, nickName, cityName, district, U20, A40, role, batting, bowling, whatsAppNo, basePrice
+//sl,name, nickName, dob,address,pinCode, U20, A40, role, batting, bowling, whatsAppNo, basePrice
   
   
   const navigate=useNavigate()
@@ -85,7 +80,7 @@ const Addplayer = () => {
     try {
       const { data } = await axios.post(
         `${import.meta.env.VITE_API}/api/user/add`,
-        {sl,name, nickName, cityName, district, U20, A40, role, batting, bowling, whatsAppNo, basePrice }
+        {sl,name, nickName,dob,address,pinCode,  role, batting, bowling, whatsAppNo, basePrice }
       );
      
       if (data) {
@@ -155,12 +150,12 @@ const Addplayer = () => {
 
                 <div className="mt-2 font-serif   ">
                   <input
-                    id="cityName"
-                    name="cityName"
-                    value={cityName}
-                    onChange={(e) => setCityName(e.target.value)}
-                    type="text"
-                    placeholder="City Name of the player"
+                    id="dob"
+                    name="dob"
+                    value={dob}
+                    onChange={(e) => setDob(e.target.value)}
+                    type="Date"
+                    placeholder="Enter the date of birth"
                     required
                     className="text-center  block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                   />
@@ -168,12 +163,25 @@ const Addplayer = () => {
 
                 <div className="mt-2 font-serif   ">
                   <input
-                    id="district"
-                    name="district"
-                    value={district}
-                    onChange={(e) => setDistrict(e.target.value)}
+                    id="address"
+                    name="address"
+                    value={address}
+                    onChange={(e) => setAddress(e.target.value)}
                     type="text"
-                    placeholder="District Name of the player"
+                    placeholder="Enter the address"
+                    required
+                    className="text-center  block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  />
+                </div>
+
+                <div className="mt-2 font-serif   ">
+                  <input
+                    id="pinCode"
+                    name="pinCode"
+                    value={pinCode}
+                    onChange={(e) => setPinCode(e.target.value)}
+                    type="Number"
+                    placeholder="Enter the pincode"
                     required
                     className="text-center  block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                   />
@@ -181,54 +189,11 @@ const Addplayer = () => {
 
 
 
-                <div className="mt-2 ">
-                  <div className="max-w-sm mx-auto">
-                    <label
-                      htmlFor="countries"
-                      className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                    >
-                      
-                    </label>
-                    <select
-                      id="countries"
-                      className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                      value={U20}
-                      onChange={(e) => setU20(e.target.value)}
-                    >
-                      <option value="" disabled >Under 20 ?</option>
-                      <option value="Yes">YES</option>
-                      <option value="No">NO</option>
-                      
-                      
-                    </select>
-                  </div>
-                </div>
+               
 
 
 
-                <div className="mt-2 ">
-                  <div className="max-w-sm mx-auto">
-                    <label
-                      htmlFor="countries"
-                      className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                    >
-                     
-                    </label>
-                    <select
-                      id="countries"
-                      className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                      value={A40}
-                      onChange={(e) => setA40(e.target.value)}
-                    >
-                      <option value="" disabled > Above 40 ?</option>
-                      <option value="Yes">YES</option>
-                      <option value="No">NO</option>
-                      
-                      
-                    </select>
-                  </div>
-                </div>
-
+            
 
 
                 <div className="mt-2 ">
@@ -343,7 +308,7 @@ const Addplayer = () => {
                     type="submit"
                     className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                   >
-                    Update
+                    Add Player
                   </button>
                 </div>
               </form>

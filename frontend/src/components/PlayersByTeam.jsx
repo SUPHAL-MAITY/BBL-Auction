@@ -65,18 +65,7 @@ const PlayersByTeam = () => {
                       Name
                     </th>
 
-                    <th
-                      scope="col"
-                      className="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase"
-                    >
-                      U20
-                    </th>
-                    <th
-                      scope="col"
-                      className="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase"
-                    >
-                      A40
-                    </th>
+                 
 
                     <th
                       scope="col"
@@ -97,12 +86,7 @@ const PlayersByTeam = () => {
                         {c.name}
                        
                       </td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800">
-                        {c.U20}
-                      </td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800">
-                        {c.A40}
-                      </td>
+                     
 
                       <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800">
                         {c.soldPrice}

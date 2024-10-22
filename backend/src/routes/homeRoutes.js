@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { getAllTeams } from "../controller/teamController.js";
+import { getAllTeamDetails } from "../controller/teamController.js";
 
 
 
@@ -10,7 +10,9 @@ const router=Router()
 
 
 
-router.route("/all").get(getAllTeams)
+// router.route("/all").get(getAllTeams)
+router.route("/teams").get(getAllTeamDetails)
+
 
 
 

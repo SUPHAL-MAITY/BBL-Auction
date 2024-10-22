@@ -30,7 +30,7 @@ const Dashboard = () => {
 
       try {
         await  axios.delete(
-          `${import.meta.env.VITE_API}/api/team/${id}`
+          `${import.meta.env.VITE_API}/api/admin/${id}`
         );
        
         navigate("/");
@@ -61,8 +61,7 @@ const Dashboard = () => {
                 <th scope="col" className="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase">Sl</th>
                 <th scope="col" className="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase">Name</th>
                 
-                <th scope="col" className="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase">U20</th>
-                <th scope="col" className="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase">A40</th>
+                
                 <th scope="col" className="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase">Role</th>
                 <th scope="col" className="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase">Batting</th>
                 <th scope="col" className="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase">Bowling</th>
@@ -78,8 +77,7 @@ const Dashboard = () => {
                 <tr className="odd:bg-white even:bg-gray-100" key={i}>
                 <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800">{c.sl}</td>
                 <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800">{c.name}</td>
-                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800">{c.U20} </td>
-                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800">{c.A40}</td>
+                
                 <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800">{c.role} </td>
                 <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800">{c.batting} </td>
                 <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800">{c.bowling} </td>

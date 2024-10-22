@@ -31,10 +31,10 @@ import homeRouter from  "./routes/homeRoutes.js"
 import  adminRouter from "./routes/adminRoutes.js"
 
 
-
+app.use("/api/team",teamRouter)
 app.use("/api/user",authRouter)
 app.use("/api/user",playerRouter)
-app.use("/api/team",teamRouter)
+
 app.use("/api/home",homeRouter)
 app.use("/api/admin",adminRouter)
 

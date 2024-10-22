@@ -7,6 +7,7 @@ import { deleteController, editPlayer } from "../controller/adminController.js";
 
 
 
+
 const router=Router()
 
 
@@ -14,7 +15,8 @@ const router=Router()
 
 router.route("/:teamName").get(getImagesByTeam)
 router.route("/:id").post(editPlayer)
-router.route("/:id").delete(deleteController)
+// router.route("/:id").delete(deleteController)
+
 
 
 

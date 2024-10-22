@@ -6,6 +6,8 @@ import mongoose,{Schema} from "mongoose";
 const playerSchema = new Schema({
   sl: {
     type: Number,
+    unique:[true,"sl should be unique"],
+
     
   },
     name: {
