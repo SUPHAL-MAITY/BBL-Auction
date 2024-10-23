@@ -162,7 +162,29 @@ const deleteController=asyncHandler(async(req,res)=>{
 
 
 
+const getAllSl=asyncHandler(async(req,res)=>{
+    let slArray=[]
+    const unSoldPlayers=await Players.find({team:"unsold"})
 
-export {editPlayer,getSinglePlayer,deleteController,createPlayer}
+    if(!unSoldPlayers){
+        throw new ApiError(400,"unsold  Players  not found  while finding sl ")
+    }
+
+    unSoldPlayers.forEach((c)=>{
+        slArray.push(c.sl)
+
+
+    })
+
+
+    console.log(slArray)
+
+return res.status(200).json({status:200,slArray,message:"array has been successfully"})
+
+
+})
+
+
+export {editPlayer,getSinglePlayer,deleteController,createPlayer,getAllSl}
 
 

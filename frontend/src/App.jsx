@@ -6,6 +6,7 @@ import Home from "./components/Home.jsx"
 import Login from "./components/Login.jsx"
 import Navbar from "./components/Navbar.jsx"
 import Players from "./components/Players.jsx"
+import Profile from "./components/Profile.jsx"
 import TeamsDashboard from "./components/TeamsDashboard.jsx"
 import Layout from "./Layout/Layout.jsx"
 import PageNotFound from "./Layout/pageNotFound.jsx"
@@ -43,20 +44,10 @@ function App() {
              <Route path='/iuw4g4V3jlcs47lZUvHhww=='  element={<Dashboard/>} />
              <Route path='/iuw4g4V3jlcs47lZUvHhww==/:id'  element={<EditForm/>} />
              <Route path='/bid'  element={<GenerateNo/>} />
+             <Route path='/profile'  element={<Profile/>} />
            
              <Route path='*' element={<PageNotFound/>}/>
-
-
-
-             {/* <Route path='admin' element={<Admin/>}>
-                    <Route path='/admin/dashboard'  element={<AdminDashboard/>} />
-                    <Route path='/admin/dashboard/create-categories'  element={<DashboardCreate/>} />
-                    <Route path='/admin/dashboard/update-categories'  element={<DashboardUpdate />} />
-                    <Route path='/admin/dashboard/categories'  element={<DashboardCategories />} />
-             </Route> */}
-
-             
-        
+ 
 
       </Route>
 

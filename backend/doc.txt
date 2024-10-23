@@ -565,3 +565,8 @@ api/user/:teamName--->>GET
 
 
 --------------------------------------------------------------
+
+how to start the project
+
+cd backend  
+npm run dev
