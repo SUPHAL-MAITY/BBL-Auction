@@ -1,6 +1,7 @@
 import Addplayer from "./components/Addplayer.jsx"
 import Dashboard from "./components/Dashboard.jsx"
 import EditForm from "./components/EditForm.jsx"
+import GenerateNo from "./components/GenerateNo.jsx"
 import Home from "./components/Home.jsx"
 import Login from "./components/Login.jsx"
 import Navbar from "./components/Navbar.jsx"
@@ -41,6 +42,7 @@ function App() {
              <Route path='/teams/:team'  element={<TeamsDashboard/>} />
              <Route path='/iuw4g4V3jlcs47lZUvHhww=='  element={<Dashboard/>} />
              <Route path='/iuw4g4V3jlcs47lZUvHhww==/:id'  element={<EditForm/>} />
+             <Route path='/bid'  element={<GenerateNo/>} />
            
              <Route path='*' element={<PageNotFound/>}/>
 

@@ -1,0 +1,15 @@
+
+.bid_container{
+    display: flex;
+    border: 2px solid black;
+    
+
+}
+
+
+.roll_ball{
+
+    height: 50vh;
+    width: 40%;
+    background-color: antiquewhite;
+}

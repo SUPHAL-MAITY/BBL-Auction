@@ -1,7 +1,6 @@
 import React, { useState,useEffect } from "react";
-// import { Link, useNavigate } from "react-router-dom";
-// import { FaBars, FaTimes } from "react-icons/fa";
 import {  useNavigate } from "react-router-dom";
+import "../App.css"
 
 
 const Navbar = () => {
@@ -40,7 +39,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="flex min-w-max  bg-cyan-600 items-center justify-between  p-6">
+      <nav className="flex min-w-max  bg-cyan-600 items-center justify-between  p-6  ">
         <div className=" block lg:hidden">
           <button
             onClick={() => setIsOpen(!isOpen)}
@@ -117,7 +116,7 @@ const Navbar = () => {
         </div>
         <div className="text-center sm:text-right">
           <h1
-            className={`text-yellow-400 mr-10 font-serif text-2xl  ${
+            className={`hidden md:block text-yellow-400 mr-10 font-serif text-2xl  ${
               isOpen ? "hidden" : "block"
             }`}
           >
