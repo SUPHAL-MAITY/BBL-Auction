@@ -56,25 +56,25 @@ const HomoeDashboard = () => {
           <table className="min-w-full  divide-y divide-gray-200">
             <thead className="bg-cyan-100">
               <tr>
-                <th scope="col" className="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase">Name</th>
+                <th scope="col" className="px-6 py-1 text-start text-xs font-medium text-gray-500 uppercase">Name</th>
                 
-                <th scope="col" className="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase">Amount Spent</th>
-                <th scope="col" className="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase">Remaining Amount</th>
+                <th scope="col" className="px-6 py-1 text-start text-xs font-medium text-gray-500 uppercase">Amount Spent</th>
+                <th scope="col" className="px-6 py-1 text-start text-xs font-medium text-gray-500 uppercase">Remaining Amount</th>
             
-                <th scope="col" className="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase">Total Players</th>
-                <th scope="col" className="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase">Max Bid</th>
+                <th scope="col" className="px-6 py-1 text-start text-xs font-medium text-gray-500 uppercase">Total Players</th>
+                <th scope="col" className="px-6 py-1 text-start text-xs font-medium text-gray-500 uppercase">Max Bid</th>
         
               </tr>
             </thead>
             <tbody>
               {teams.map((c,i)=>(
                 <tr className="odd:bg-white even:bg-gray-100" key={i}>
-                <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800">{c.name}</td>
-                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800">{c.spentMoney} </td>
-                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800">{totalAuctionPrice -c.spentMoney }</td>
+                <td className="px-6 py-1 whitespace-nowrap text-sm font-medium text-gray-800">{c.name}</td>
+                <td className="px-6 py-1 whitespace-nowrap text-sm text-gray-800">{c.spentMoney} </td>
+                <td className="px-6 py-1 whitespace-nowrap text-sm text-gray-800">{totalAuctionPrice -c.spentMoney }</td>
                
-                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800">{c.totalPlayers? c.totalPlayers:0} </td>
-                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800">{ c.totalPlayers==15 ?0 :  (totalAuctionPrice -c.spentMoney)- ((playersToBuy-1-c.totalPlayers)*basePrice)} </td>
+                <td className="px-6 py-1 whitespace-nowrap text-sm text-gray-800">{c.totalPlayers? c.totalPlayers:0} </td>
+                <td className="px-6 py-1 whitespace-nowrap text-sm text-gray-800">{ c.totalPlayers==15 ?0 :  (totalAuctionPrice -c.spentMoney)- ((playersToBuy-1-c.totalPlayers)*basePrice)} </td>
         
               </tr>
 
