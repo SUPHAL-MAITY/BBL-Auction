@@ -18,7 +18,7 @@ const GenerateNo = () => {
 
 
 useEffect(()=>{
- const data= JSON.parse(localStorage.getItem("id"))
+ const data= localStorage.getItem("id")
  if(data){
   setBtnVisible(true)
  }
