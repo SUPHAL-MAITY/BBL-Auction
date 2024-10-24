@@ -80,7 +80,7 @@ const Navbar = () => {
               Players
             </a>
             <a
-              href="/teams/a-to-z"
+              href="/teams/akash-11-"
               className="block text-lg font-serif  mt-4 lg:inline-block lg:mt-0 font-bold text-white mr-4"
             >
               Teams

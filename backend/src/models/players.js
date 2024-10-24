@@ -18,22 +18,6 @@ const playerSchema = new Schema({
         type: String,
         
       },
-      cityName: {
-        type: String,
-        
-      },
-      district: {
-        type: String,
-       
-      },
-      U20:{
-        type: String,
-
-      },
-     A40:{
-        type: String,
-
-      },
       role: {
         type: String,
       },
@@ -43,12 +27,17 @@ const playerSchema = new Schema({
       bowling: {
         type: String,
       },
-      whatsAppNo: {
+      jersey:{
+        type:String,
+
+      },
+      whatsapp: {
         type: Number,
         
       },
       basePrice: {
         type: Number,
+        default:500,
       },
       soldPrice: {
         type: Number,
@@ -56,16 +45,39 @@ const playerSchema = new Schema({
       },
       team: {
         type: String,
-        default:"unsold"
+        default:"no_bid"
 
       },
-      slug: {
-        type: String,
-        default:"unsold"
-
+      url:{
+        type:String,
       },
+      dob:{
+        type:String,
+      },
+      pincode:{
+        type:Number,
+      },
+      team_slug:{
+        type:String,
+      }
+    
 
 },{timestamps:true})
+
+
+playerSchema.virtual("age").get(function(){
+  const today=new Date();
+  const birthDay=new Date(this.dob);
+
+
+  let age= today.getFullYear() - birthDay.getFullYear();
+  const monthDifference=today.getMonth()- birthDay.getMonth()
+
+  if(monthDifference <0 || (monthDifference===0 && today.getDate()<birthDay.getDate())){
+    age--
+  }
+  return age;
+})
 
 
 

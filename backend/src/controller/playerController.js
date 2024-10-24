@@ -22,7 +22,7 @@ const getAllPlayers=asyncHandler(async(req,res)=>{
 
 const getImagesByTeam=asyncHandler(async(req,res)=>{
     const {teamName}=req.params;
-    console.log("getimage")
+    // console.log("getimage")
 
     const url=await Teams.findOne({slug:teamName})
 
@@ -40,7 +40,7 @@ const getImagesByTeam=asyncHandler(async(req,res)=>{
 const getPlayersByTeam=asyncHandler(async(req,res)=>{
     const {teamName}=req.params;
 
-    const players=await Players.find({slug:teamName})
+    const players=await Players.find({team_slug:teamName})
 
     if(!players){
         throw new ApiError(400,"No Players found while finding by team name")

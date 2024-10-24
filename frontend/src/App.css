@@ -3,8 +3,10 @@
     display: flex;
     border: 2px solid black;
     justify-content: center;
-    height: 300px;
-    
+    height: 100vh;
+    /* background: url("https://res.cloudinary.com/dobdrg18h/image/upload/v1729758813/auction1_ysnjhj.jpg") no-repeat fixed center; */
+    background: rgb(44,39,133);
+background: linear-gradient(90deg, rgba(44,39,133,1) 2%, rgba(179,31,176,0.8185399159663865) 53%, rgba(0,212,255,1) 86%);
 
 }
 
@@ -17,7 +19,7 @@
 
     width:70%;
     height: 200px;
-    border: 2px solid red;
+    /* border: 2px solid red; */
 }
 
 .roll_ball{
@@ -41,20 +43,21 @@
 .show_card{
     height: 80%;
     width: 80%;
-    background-color: antiquewhite;
-    border: 2px solid red;
-    box-shadow: 4px 4px gray;
+    background-color: rgb(15, 9, 1);
+    color: white;
+    border-radius: 20px;
+    /* border: 2px solid red; */
+    box-shadow: 10px 10px 4px rgb(56, 51, 51);
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 80px;
+    font-family: Georgia, serif;
+    
 
 }
-.show_card >input{
-    background-color: transparent;
-   
-    
-    
+.show_card:hover{
+    transform: rotateX(10deg) rotateY(8deg) ;;
 }
 
 
@@ -65,23 +68,28 @@
     width: 25%;
     display: flex;
     flex-direction: column;
+    margin-top: 10%;
 }
 
-.btn_container>input{
+.btn_container>a>input{
     text-align: center;
-    border: 1px soid black;
+    
     background: rgb(2,0,36);
     background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(179,31,176,0.8185399159663865) 64%, rgba(0,212,255,1) 100%);
     color: white;
     border-radius: 10px;
     margin: 10px;
+    padding: 5px;
     font-family:font-serif ;
+    width: 93%;
 }
 
 .btn{
     border: 1px soid black;
     background-color: gray;
     border-radius: 10px;
+    padding: 5px;
+    
     margin: 10px;
     background: rgb(2,0,36);
     background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(179,31,176,0.8185399159663865) 64%, rgba(0,212,255,1) 100%);
@@ -108,7 +116,8 @@
 
 .profile{
     width: 50%;
-    margin: 2% auto;
+    margin: 5% auto;
+    
 }
 
 

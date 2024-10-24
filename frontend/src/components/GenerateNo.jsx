@@ -2,6 +2,8 @@ import React, { useEffect } from 'react'
 import "../App.css"
 import { useState } from 'react'
 import axios from "axios";
+import { Link } from "react-router-dom";
+
 
 
 
@@ -14,6 +16,8 @@ const GenerateNo = () => {
   const [slArray,setSlArray]=useState(JSON.parse(localStorage.getItem("myArray")) ||[])
   const [serialNumber,setSerialNumber]=useState(0)
   const [btnVisible,setBtnVisible]=useState(false)
+
+  
 
 
 
@@ -112,12 +116,15 @@ useEffect(()=>{
               {rand}
             </div>
 
+            
+
       </div>
 
       <div className={`btn_container  ${btnVisible ?"":"hidden"}`}>
         <button className="btn" id='btn-1' onClick={handleSpin}>Spin</button>
-        <input name='bid_number'  type='Number' value={rand} onChange={handleChange} placeholder='enter '  />
-
+        <Link  to={`/profile/${rand}`}  target="_blank">
+           <input name='bid_number'   type='Number' value={rand} onChange={handleChange} placeholder='enter '  />
+        </Link>
         <button className="btn" onClick={handleBid}>Bid</button>
         <button className="btn" onClick={handleReset}  >Reset</button>
        

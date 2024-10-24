@@ -43,13 +43,23 @@ function App() {
              <Route path='/teams/:team'  element={<TeamsDashboard/>} />
              <Route path='/iuw4g4V3jlcs47lZUvHhww=='  element={<Dashboard/>} />
              <Route path='/iuw4g4V3jlcs47lZUvHhww==/:id'  element={<EditForm/>} />
-             <Route path='/bid'  element={<GenerateNo/>} />
-             <Route path='/profile'  element={<Profile/>} />
+             
            
              <Route path='*' element={<PageNotFound/>}/>
- 
+
+            
 
       </Route>
+
+
+
+      <Route path='/'  >
+             
+             <Route path='/bid'  element={<GenerateNo/>} />
+             <Route path='/profile/:id'  element={<Profile/>} />
+
+      </Route>
+
 
       
 

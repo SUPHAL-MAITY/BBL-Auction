@@ -39,6 +39,10 @@ const PlayersByTeam = () => {
     }
   };
 
+
+  
+
+
   return (
     <div className="bg-slate-100">
       <div className="mx-14 my-4 ">
