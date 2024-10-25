@@ -24,20 +24,20 @@ const Sidebar = () => {
   return (
     <>
       <div>
-        <div className="relative flex flex-col bg-slate-100 bg-clip-border rounded-xl  text-gray-700 h-[calc(100vh-2rem)] w-full h-full max-w-[10rem]  sm:max-w-[20rem] p-4 shadow-xl shadow-blue-gray-900/5">
+        <div className="relative flex flex-col bg-slate-100 bg-clip-border rounded-xl  text-gray-700 h-[calc(100vh-2rem)] w-full h-full max-w-[7rem]  sm:max-w-[20rem] p-4 shadow-xl shadow-blue-gray-900/5">
           <div className="mb-2 p-4 mx-auto  sm:mx-24">
             <h5 className="block font-serif  text-teal-700 antialiased tracking-normal  text-xl font-semibold leading-snug text-gray-900">
               Teams
             </h5>
           </div>
 
-          <nav className="flex flex-col gap-1 min-w-[240px]   p-2 font-sans text-base font-normal text-gray-700">
+          <nav className="flex flex-col  min-w-[240px]  p-1 font-sans text-base font-normal text-gray-700 ">
             {teams.map((c,i) => (
               <div key={i}
                 role="button"
-                className="flex font-semibold font-serif text-sm   p-4 mx-auto   sm:mx-24 w-full  rounded-lg text-start leading-tight transition-all hover:text-red-500  active:text-red-500"
+                className=" flex font-semibold  font-serif text-sm   p-4 mx-auto   sm:mx-24 w-full  rounded-lg text-start leading-3 sm:leading-tight transition-all hover:text-red-500  active:text-red-500"
               >
-                <Link to={`/teams/${c.slug}`}>{c.name}</Link>
+                <Link to={`/teams/${c.slug}`}><p className="truncate w-20 sm:w-36 sm:truncate  md:w-full  ">{c.name}</p> </Link>
               </div>
             ))}
 
