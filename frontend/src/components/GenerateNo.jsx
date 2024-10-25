@@ -15,92 +15,127 @@ const GenerateNo = () => {
   const [ballActive,setBallActive]=useState(false)
   const [slArray,setSlArray]=useState(JSON.parse(localStorage.getItem("myArray")) ||[])
   const [serialNumber,setSerialNumber]=useState(0)
-  const [btnVisible,setBtnVisible]=useState(false)
+  const [btnVisible,setBtnVisible]=useState(true)
 
   
 
 
 
-useEffect(()=>{
- const data= localStorage.getItem("id")
- if(data){
-  setBtnVisible(true)
- }
+// useEffect(()=>{
+//  const data= localStorage.getItem("id")
+//  if(data){
+//   setBtnVisible(true)
+//  }
 
  
 
-},[])
+// },[])
 
 
-  const handleSpin=()=>{
-    setBallActive(true)
-    console.log("ball active")
 
-    setTimeout(()=>{
-      console.log("inside time out")
-      setBallActive(false)
-      let randomNo=Math.floor(Math.random()*slArray.length)+1
-      console.log(randomNo)
-      setSerialNumber(randomNo)
-      setRand(slArray[randomNo-1])
+const handleSpin=async()=>{
 
+   setBallActive(true)
 
-    },3000)
-    
-
-  }
-
-
-  const handleReset=async()=>{
+   setTimeout(async()=>{
     try {
       const {data}=await axios.get( `${import.meta.env.VITE_API}/api/admin/random`)
       console.log(data)
       setSlArray(data.slArray)
-      alert("Array has been reset")
+      console.log(slArray)
+      let randomNo=Math.floor(Math.random()*data.slArray.length)+1
+
+      setBallActive(false)
+      setRand(data.slArray[randomNo-1])
+
+
+      // alert("Array has been reset")
       
     } catch (error) {
       console.log(error)
-      
     }
+
+
+   },3000)
+
+  
+
+}
+
+
+
+  // const handleSpin=()=>{
+
+  //   setBallActive(true)
+  //   console.log("ball active")
+
+  //   setTimeout(()=>{
+  //     console.log("inside time out")
+  //     setBallActive(false)
+  //     let randomNo=Math.floor(Math.random()*slArray.length)+1
+  //     console.log(randomNo)
+  //     setSerialNumber(randomNo)
+  //     setRand(slArray[randomNo-1])
+
+
+  //   },3000)
+    
+
+  // }
+
+
+  // const handleReset=async()=>{
+  //   try {
+  //     const {data}=await axios.get( `${import.meta.env.VITE_API}/api/admin/random`)
+  //     console.log(data)
+  //     setSlArray(data.slArray)
+  //     alert("Array has been reset")
+      
+  //   } catch (error) {
+  //     console.log(error)
+      
+  //   }
      
 
-  }
+  // }
 
 
 
-  const handleBid=()=>{
-    console.log("rand:",rand)
+  // const handleBid=()=>{
+  //   console.log("rand:",rand)
 
-    let index=slArray.indexOf(parseInt(rand))
+  //   let index=slArray.indexOf(parseInt(rand))
 
-    if(slArray[serialNumber-1]!==slArray[index]){
-      setSerialNumber(index+1)
-      console.log("they are not same")
+  //   if(slArray[serialNumber-1]!==slArray[index]){
+  //     setSerialNumber(index+1)
+  //     console.log("they are not same")
 
-    }
-
-    
-
-    console.log("handle Bid clicked")
-    console.log("serialN0:",serialNumber)
-    // slArray.splice(serialNumber-1,1)
-    slArray.splice(index,1)
-    console.log(slArray)
-    localStorage.setItem("myArray",JSON.stringify(slArray))
-    setRand(0)
-    alert("player has been removed from auction pool for now")
+  //   }
 
     
 
-  }
+  //   console.log("handle Bid clicked")
+  //   console.log("serialN0:",serialNumber)
+  //   // slArray.splice(serialNumber-1,1)
+  //   slArray.splice(index,1)
+  //   console.log(slArray)
+  //   localStorage.setItem("myArray",JSON.stringify(slArray))
+  //   setRand(0)
+  //   alert("player has been removed from auction pool for now")
+
+    
+
+  // }
 
 
-  const handleChange=(e)=>{
+ const handleChange=(e)=>{
     setRand(e.target.value)
     
-   
-
   }
+
+
+
+
 
   return (
     <div className='bid_container'>
@@ -125,8 +160,8 @@ useEffect(()=>{
         <Link  to={`/profile/${rand}`}  target="_blank">
            <input name='bid_number'   type='Number' value={rand} onChange={handleChange} placeholder='enter '  />
         </Link>
-        <button className="btn" onClick={handleBid}>Bid</button>
-        <button className="btn" onClick={handleReset}  >Reset</button>
+        {/* <button className="btn" onClick={handleBid}>Bid</button>
+        <button className="btn" onClick={handleReset}  >Reset</button> */}
        
 
 
@@ -138,4 +173,4 @@ useEffect(()=>{
   )
 }
 
-export default GenerateNo
+export default GenerateNo;

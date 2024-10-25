@@ -96,7 +96,7 @@ const deleteController=asyncHandler(async(req,res)=>{
 
 const getAllSl=asyncHandler(async(req,res)=>{
     let slArray=[]
-    const unSoldPlayers=await Players.find({team:"unsold"})
+    const unSoldPlayers=await Players.find({team:"no_bid"})
 
     if(!unSoldPlayers){
         throw new ApiError(400,"unsold  Players  not found  while finding sl ")
