@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { deleteController, getAllSl, getSinglePlayer, playerCount } from "../controller/adminController.js";
+import { deleteController, getAllSl, getSinglePlayer, playerCount, resetController } from "../controller/adminController.js";
 
 
 
@@ -7,6 +7,7 @@ const router=Router()
 
 router.route("/count").get(playerCount)
 router.route("/random").get(getAllSl)
+router.route("/reset").post(resetController)
 router.route("/:id").get(getSinglePlayer)
 router.route("/:id").delete(deleteController)
 

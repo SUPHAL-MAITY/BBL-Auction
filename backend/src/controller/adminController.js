@@ -130,6 +130,21 @@ const playerCount=asyncHandler(async(req,res)=>{
 
 
 
-export {editPlayer,getSinglePlayer,deleteController,createPlayer,getAllSl,playerCount}
+const resetController=asyncHandler(async(req,res)=>{
+   const updatedPlayers= await Players.updateMany({team:"unsold"},{$set:{team:"no_bid",team_slug:"no_bid"}})
+
+   if(!updatedPlayers){
+    throw new ApiError(400,"updated players have not been obtained")
+   }
+
+   return res.status(200).json({status:200 ,message:"players have been updated successfully"})
+
+
+
+})
+
+
+
+export {editPlayer,getSinglePlayer,deleteController,createPlayer,getAllSl,playerCount,resetController}
 
 
