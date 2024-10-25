@@ -1,6 +1,7 @@
 import React, { useState,useEffect } from "react";
 import {  useNavigate,useLocation } from "react-router-dom";
 import "../App.css"
+import useSearch from "../context/SearchContext";
 
 
 const Navbar = () => {
@@ -9,10 +10,18 @@ const Navbar = () => {
 
   const [isOpen, setIsOpen] = useState(false);
   const  [id,setId]=useState("")
+  const [input,setInput]=useState("")
+  
   const navigate = useNavigate();
   const location=useLocation()
+
+  
+  const {updateSearchInput}=useSearch()
+
+  
   
  
+
 
   useEffect(()=>{
 
@@ -33,6 +42,12 @@ const Navbar = () => {
 
    const addPlayer=()=>{
     navigate("/addplayer")
+   }
+
+
+   const handleChange=(e)=>{
+    updateSearchInput(e.target.value)
+
    }
 
 
@@ -121,7 +136,7 @@ const Navbar = () => {
               isOpen ? "hidden" : "block"
             }`}
           >
-               {location.pathname=="/iuw4g4V3jlcs47lZUvHhww=="? <input id="search_bar" placeholder=" Search serial number"/>:"Welcome to BBPL Live Auction"} 
+               {location.pathname=="/iuw4g4V3jlcs47lZUvHhww=="? <input id="search_bar" onChange={handleChange} placeholder=" Search serial number"/>:"Welcome to BBPL Live Auction"} 
           </h1>
         </div>
         <div className="">

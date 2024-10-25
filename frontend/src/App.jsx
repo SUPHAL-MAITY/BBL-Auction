@@ -10,6 +10,8 @@ import Profile from "./components/Profile.jsx"
 import TeamsDashboard from "./components/TeamsDashboard.jsx"
 import Layout from "./Layout/Layout.jsx"
 import PageNotFound from "./Layout/pageNotFound.jsx"
+import { SearchProvider } from "./context/SearchContext.jsx"
+import { useState } from "react"
 
 import React from 'react'
 import ReactDOM from 'react-dom/client'
@@ -27,14 +29,20 @@ import {
 function App() {
 
 
+  const [searchInput,setSearchInput]=useState("")
 
+
+  const  updateSearchInput=(input)=>{
+    setSearchInput(input)
+
+  }
 
 
 
   const router=createBrowserRouter(
     createRoutesFromElements(
       <>
-     
+    
       <Route path='/'  element={<Layout/>} >
              <Route path='/'  element={<Home/>} />
              <Route path='/players'  element={<Players/>} />
@@ -51,7 +59,7 @@ function App() {
 
       </Route>
 
-
+     
 
       <Route path='/'  >
              
@@ -74,10 +82,14 @@ function App() {
 
   return (
     <>
+    <SearchProvider value={{searchInput,updateSearchInput}} >
     <RouterProvider router={router} >   
         
-    </RouterProvider>  
-  
+        </RouterProvider>  
+      
+
+    </SearchProvider>
+    
     
     
     </>
