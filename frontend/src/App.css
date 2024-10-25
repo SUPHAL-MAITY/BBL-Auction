@@ -122,4 +122,15 @@ background: linear-gradient(90deg, rgba(44,39,133,1) 2%, rgba(179,31,176,0.81853
 
 
 
+/* search bar in the admin dashboard */
+#search_bar{
+    background-color: transparent;
+    border: 1px sold white;
+    border-radius: 4px;
+    color: yellow;
+    
+}
+
+
+
 

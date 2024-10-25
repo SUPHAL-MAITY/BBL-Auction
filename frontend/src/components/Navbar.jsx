@@ -1,5 +1,5 @@
 import React, { useState,useEffect } from "react";
-import {  useNavigate } from "react-router-dom";
+import {  useNavigate,useLocation } from "react-router-dom";
 import "../App.css"
 
 
@@ -10,6 +10,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const  [id,setId]=useState("")
   const navigate = useNavigate();
+  const location=useLocation()
   
  
 
@@ -80,7 +81,7 @@ const Navbar = () => {
               Players
             </a>
             <a
-              href="/teams/akash-11-"
+              href="/teams/Akash-11"
               className="block text-lg font-serif  mt-4 lg:inline-block lg:mt-0 font-bold text-white mr-4"
             >
               Teams
@@ -120,7 +121,7 @@ const Navbar = () => {
               isOpen ? "hidden" : "block"
             }`}
           >
-            Welcome to BBPL Live Auction
+               {location.pathname=="/iuw4g4V3jlcs47lZUvHhww=="? <input id="search_bar" placeholder=" Search serial number"/>:"Welcome to BBPL Live Auction"} 
           </h1>
         </div>
         <div className="">

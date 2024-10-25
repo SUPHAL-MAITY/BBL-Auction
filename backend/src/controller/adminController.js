@@ -59,14 +59,14 @@ const createPlayer=asyncHandler(async(req,res)=>{
    
 
 
-    const { sl,name, nickName, dob,address,pinCode, U20, A40, role, batting, bowling, whatsAppNo, basePrice}=req.body
+    const { sl,name, nickName, dob,role, batting, bowling,jersey,pincode, whatsapp}=req.body
 
-    if( !sl || !name || !nickName|| !dob || !address || !pinCode  ||  !role ||  !batting ||  !bowling ||  !whatsAppNo ||  !basePrice){
+    if( !sl || !name || !nickName|| !dob  || !pincode  ||  !role ||  !batting ||  !bowling ||  !whatsapp ||  !jersey){
         throw new ApiError(400,"please provide  all details of player")
     }
 
     const newPlayer=new Players({
-        sl,name, nickName, dob,address,pinCode, U20, A40, role, batting, bowling, whatsAppNo, basePrice
+        sl,name, nickName, dob,role, batting, bowling,jersey,pincode, whatsapp
     })
     
     await newPlayer.save()
@@ -117,6 +117,19 @@ return res.status(200).json({status:200,slArray,message:"array has been successf
 })
 
 
-export {editPlayer,getSinglePlayer,deleteController,createPlayer,getAllSl}
+const playerCount=asyncHandler(async(req,res)=>{
+    const count=await Players.countDocuments({})
+
+    if(!count){
+        throw new ApiError(400,"Number  of players has not been generated ")
+    }
+
+    return res.status(200).json({status:200,count,message:"count  has been obtained successfully"})
+
+})
+
+
+
+export {editPlayer,getSinglePlayer,deleteController,createPlayer,getAllSl,playerCount}
 
 
