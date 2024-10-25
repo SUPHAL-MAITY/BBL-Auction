@@ -6,9 +6,9 @@ import axios from "axios";
 const HomoeDashboard = () => {
 
   
-  let playersToBuy=15;
-  let basePrice=1000;
-  let totalAuctionPrice=50000;
+  let playersToBuy=14;
+  let basePrice=500;
+  let totalAuctionPrice=30000;
 
 
   const [teams,setTeams]=useState([])
@@ -72,7 +72,7 @@ const HomoeDashboard = () => {
                 <td className="px-6 py-1 whitespace-nowrap text-sm text-gray-800">{totalAuctionPrice -c.spentMoney }</td>
                
                 <td className="px-6 py-1 whitespace-nowrap text-sm text-gray-800">{c.totalPlayers? c.totalPlayers:0} </td>
-                <td className="px-6 py-1 whitespace-nowrap text-sm text-gray-800">{ c.totalPlayers==15 ?0 :  (totalAuctionPrice -c.spentMoney)- ((playersToBuy-1-c.totalPlayers)*basePrice)} </td>
+                <td className="px-6 py-1 whitespace-nowrap text-sm text-gray-800">{ c.totalPlayers==playersToBuy ? 0 :  (totalAuctionPrice -c.spentMoney)- ((playersToBuy-1-c.totalPlayers)*basePrice)} </td>
         
               </tr>
 
