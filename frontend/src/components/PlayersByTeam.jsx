@@ -39,13 +39,9 @@ const PlayersByTeam = () => {
     }
   };
 
-
-  
-
-
   return (
     <div className="bg-slate-100">
-      <div className="mx-14 my-4 ">
+      <div className="mx-16 my-4 ">
         <img style={{ width: 100, height: 100 }} src={url} alt=" Logo" />
       </div>
 
@@ -58,22 +54,20 @@ const PlayersByTeam = () => {
                   <tr>
                     <th
                       scope="col"
-                      className="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase"
+                      className="px-6 py-1 text-start text-xs font-medium text-gray-500 uppercase"
                     >
-                     Sl
+                      Sl
                     </th>
                     <th
                       scope="col"
-                      className="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase"
+                      className="px-6 py-1 text-start text-xs font-medium text-gray-500 uppercase"
                     >
                       Name
                     </th>
 
-                 
-
                     <th
                       scope="col"
-                      className="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase"
+                      className="px-6 py-1 text-start text-xs font-medium text-gray-500 uppercase"
                     >
                       Sold Price
                     </th>
@@ -82,17 +76,14 @@ const PlayersByTeam = () => {
                 <tbody>
                   {players.map((c, i) => (
                     <tr className="odd:bg-white even:bg-gray-100" key={i}>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800">
+                      <td className="px-6 py-1 whitespace-nowrap text-sm font-medium text-gray-800">
                         {c.sl}
-                       
                       </td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800">
+                      <td className="px-6 py-1 whitespace-nowrap text-sm font-medium text-gray-800">
                         {c.name}
-                       
                       </td>
-                     
 
-                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800">
+                      <td className="px-6 py-1 whitespace-nowrap text-sm font-medium text-gray-800">
                         {c.soldPrice}
                       </td>
                     </tr>

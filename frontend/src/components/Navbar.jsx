@@ -136,7 +136,7 @@ const Navbar = () => {
               isOpen ? "hidden" : "block"
             }`}
           >
-               {location.pathname=="/iuw4g4V3jlcs47lZUvHhww=="? <input id="search_bar" onChange={handleChange} placeholder=" Search serial number"/>:"Welcome to BBPL Live Auction"} 
+               {location.pathname=="/iuw4g4V3jlcs47lZUvHhww=="? <input id="search_bar" onChange={handleChange} placeholder=" Search serial number"/>:"Welcome to DPL7 Live Auction"} 
           </h1>
         </div>
         <div className="">

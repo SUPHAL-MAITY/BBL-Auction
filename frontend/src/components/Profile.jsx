@@ -7,7 +7,13 @@ import axios from "axios";
 const Profile = () => {
   let { id } = useParams();
   const [player, setPlayer] = useState([]);
-  const [isoDate,setIsoDate]=useState(player.dob || "")
+ 
+
+
+  const handleRefresh=()=>{
+    window.location.reload()
+  }
+  
 
   useEffect(() => {
     fetchProfile();
@@ -15,13 +21,7 @@ const Profile = () => {
 
 
   
-  // const date = new Date(isoDate);
-
-  // // Format the date as "DD-MM-YYYY"
-  // const day = String(date.getDate()).padStart(2, '0');
-  // const month = String(date.getMonth() + 1).padStart(2, '0'); // Months are zero-indexed
-  // const year = date.getFullYear();
-
+  
 
 
 
@@ -45,14 +45,21 @@ const Profile = () => {
             className="w-24 h-24 mt-2 mb-3 rounded-full shadow-lg"
             src={player.url}
           />
-          <h5 className="mb-1  py-2 text-2xl font-medium font-serif text-gray-900 dark:text-white">
-           
+          <h5 className="mb-1  py-1 text-2xl font-medium font-serif text-gray-900 dark:text-white"> 
            {player.name}
           </h5>
-          <span className="text-sm  py-2 text-gray-900 font-serif  dark:text-gray-400">
-          <span className="font-bold px-1">Role:</span> {player.role}
           
+          <span className="text-sm  py-2 text-gray-900 font-serif  dark:text-gray-400">
+          <span className="font-bold px-1">Role</span> {player.role}    
           </span>
+
+          <h3 className="mb-1 text-sm py-2 font-medium font-serif text-gray-900 dark:text-white">
+         <span className="font-bold px-1">Serial No:</span> {player.sl}
+          </h3>
+
+          <h3 className="mb-1 text-sm py-2 font-medium font-serif text-gray-900 dark:text-white">
+         <span className="font-bold px-1">Nick_Name:</span> {player.nickName}
+          </h3>
 
           <h3 className="mb-1 text-sm py-2 font-medium font-serif text-gray-900 dark:text-white">
          <span className="font-bold px-1">Batting:</span> {player.batting}
@@ -66,12 +73,20 @@ const Profile = () => {
           <span className="font-bold px-1">Team :</span> {player.team}
            
           </h5>
+
+          <h5 className="mb-1 py-2 text-sm font-serif  font-medium text-gray-900 dark:text-white">
+          <span className="font-bold px-1">Sold Amount:</span> {player.soldPrice}
+           
+          </h5>
           <h5 className="mb-1 py-2 text-sm font-serif  font-medium text-gray-900 dark:text-white">
           <span className="font-bold px-1">DOB :</span> {player.dob}
            
           </h5>
-          <div className="flex mt-4 md:mt-6">
-            <a
+          <div className="flex mt-2 md:mt-2">
+
+            {/* edit and back homw button */}
+
+            {/* <a
               href={`/iuw4g4V3jlcs47lZUvHhww==/${id}`}
               className="inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
             >
@@ -82,7 +97,9 @@ const Profile = () => {
               className="py-2 px-4 ms-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
             >
               Back to Home
-            </a>
+            </a> */}
+
+            <button onClick={handleRefresh} className="btn w-36">Refresh</button>
           </div>
         </div>
       </div>
