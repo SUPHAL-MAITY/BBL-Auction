@@ -26,14 +26,11 @@ const GenerateNo = () => {
           `${import.meta.env.VITE_API}/api/admin/random`
         );
         console.log(data);
-        setSlArray(data.slArray);
-        console.log(slArray);
+        
         let randomNo = Math.floor(Math.random() * data.slArray.length) + 1;
-
         setBallActive(false);
         setRand(data.slArray[randomNo - 1]);
 
-        // alert("Array has been reset")
       } catch (error) {
         console.log(error);
       }
