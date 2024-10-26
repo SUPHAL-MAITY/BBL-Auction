@@ -34,7 +34,7 @@ const GenerateNo = () => {
       } catch (error) {
         console.log(error);
       }
-    }, 3000);
+    }, 1000);
   };
 
 
