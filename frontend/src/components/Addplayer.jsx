@@ -14,10 +14,11 @@ const Addplayer = () => {
   const [bowling, setBowling] = useState("");
   const [whatsapp, setWhatsapp] = useState("");
   const [jersey, setJersey] = useState("");
+  const [url, setUrl] = useState("");
   
   const navigate = useNavigate();
 
-  // sl,name, nickName, dob,role, batting, bowling,jersey,pincode, whatsapp
+  // sl,name, nickName, dob,role,url, batting, bowling,jersey,pincode, whatsapp
 
   useEffect(() => {
     getPlayerCount();
@@ -29,7 +30,7 @@ const Addplayer = () => {
       const { data } = await axios.post(
         `${import.meta.env.VITE_API}/api/user/add`,
         {
-          sl,name, nickName, dob,role, batting, bowling,jersey,pincode, whatsapp
+          sl,name, nickName, dob,role, batting, bowling,jersey,pincode, whatsapp,url
 
         }
       );
@@ -218,6 +219,18 @@ const Addplayer = () => {
                       type="number"
                       onChange={(e) => setWhatsapp(e.target.value)}
                       placeholder=" Whats App Number"
+                      className="text-center  block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                    />
+                  </div>
+
+                  <div className="mt-2 font-serif   ">
+                    <input
+                      id="url"
+                      name="url"
+                      value={url}
+                      onChange={(e) => setUrl(e.target.value)}
+                      type="text"
+                      placeholder="please provide image link only"
                       className="text-center  block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                     />
                   </div>

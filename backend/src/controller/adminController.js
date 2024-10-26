@@ -59,14 +59,14 @@ const createPlayer=asyncHandler(async(req,res)=>{
    
 
 
-    const { sl,name, nickName, dob,role, batting, bowling,jersey,pincode, whatsapp}=req.body
+    const { sl,name, nickName, dob,role,url, batting, bowling,jersey,pincode, whatsapp}=req.body
 
     if( !sl || !name || !nickName|| !dob  || !pincode  ||  !role ||  !batting ||  !bowling ||  !whatsapp ||  !jersey){
         throw new ApiError(400,"please provide  all details of player")
     }
 
     const newPlayer=new Players({
-        sl,name, nickName, dob,role, batting, bowling,jersey,pincode, whatsapp
+        sl,name, nickName, dob,role,url, batting, bowling,jersey,pincode, whatsapp
     })
     
     await newPlayer.save()

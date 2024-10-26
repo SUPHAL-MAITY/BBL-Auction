@@ -120,6 +120,12 @@ background: linear-gradient(90deg, rgba(44,39,133,1) 2%, rgba(179,31,176,0.81853
     
 }
 
+.full_container{
+    
+    background: rgb(63,94,251);
+    background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
+}
+
 
 
 /* search bar in the admin dashboard */
