@@ -134,3 +134,57 @@ background: linear-gradient(90deg, rgba(44,39,133,1) 2%, rgba(179,31,176,0.81853
 
 
 
+
+/* players by team css
+*/
+
+
+.table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+    color: black;
+  }
+  
+
+  th{
+    background-color: aqua;
+    font-size: 16px;
+  }
+
+  .head_attribute{
+    padding-left: 6px;
+  }
+
+
+  .row_attribute>td{
+    padding-left: 6px;
+  }
+  
+  .row > tr {
+    text-align: center;
+    font-size: 12px;
+  }
+  
+  .row:nth-child(even) {
+    background-color: #d0caca;
+  }
+  
+ 
+  
+  .table__container {
+    overflow-x: auto;
+  }
+
+  .pbt_img{
+    
+    width: 30%;
+    margin-left: 20%;
+
+  }
+  
+
+
+
+
