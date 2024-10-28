@@ -8,7 +8,7 @@ import { Teams } from "../models/teams.js";
 
 const getAllPlayers=asyncHandler(async(req,res)=>{
 
-    const players=await Players.find({})
+    const players=await Players.find({}).sort({sl:1})
     
 
     if(!players){
