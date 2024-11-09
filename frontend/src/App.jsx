@@ -22,6 +22,7 @@ import {
 } from "react-router-dom";
 import Contact from "./components/Contact.jsx"
 import "./responsive.css"
+import TermsandCondition from "./components/TermsandCondition.jsx"
 
 
 
@@ -52,6 +53,7 @@ function App() {
              <Route path='/iuw4g4V3jlcs47lZUvHhww=='  element={<Dashboard/>} />
              <Route path='/iuw4g4V3jlcs47lZUvHhww==/:id'  element={<EditForm/>} />
              <Route path='/contactUs'  element={<Contact/>} />
+             <Route path='/termsandcondition'  element={<TermsandCondition/>} />
              
            
              <Route path='*' element={<PageNotFound/>}/>
