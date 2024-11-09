@@ -189,6 +189,45 @@ background: linear-gradient(90deg, rgba(44,39,133,1) 2%, rgba(179,31,176,0.81853
     margin-left: 20%;
 
   }
+
+
+
+
+  /* Contact page */
+
+  .contact_container{
+    border: 2px solid red;
+    width: 60%;
+    margin:  5% auto;
+    background-color:#F8EDE3 ;
+    border-radius: 16px;
+
+  }
+  .contact_content{
+    padding: 5%;
+  }
+
+  .contact_title{
+    font-size: 34px;
+    font-family:  sans-serif;
+
+  }
+
+  .contact_para{
+    font-size: 20px;
+    line-height: 40px;
+  }
+  .contact_para:first-of-type{
+     font-weight: bold;
+    
+  }
+
+
+
+
+
+ 
+
   
 
 

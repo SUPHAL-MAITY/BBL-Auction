@@ -4,7 +4,6 @@ import EditForm from "./components/EditForm.jsx"
 import GenerateNo from "./components/GenerateNo.jsx"
 import Home from "./components/Home.jsx"
 import Login from "./components/Login.jsx"
-import Navbar from "./components/Navbar.jsx"
 import Players from "./components/Players.jsx"
 import Profile from "./components/Profile.jsx"
 import TeamsDashboard from "./components/TeamsDashboard.jsx"
@@ -14,7 +13,6 @@ import { SearchProvider } from "./context/SearchContext.jsx"
 import { useState } from "react"
 
 import React from 'react'
-import ReactDOM from 'react-dom/client'
 import {
   createBrowserRouter,
   RouterProvider,
@@ -22,6 +20,8 @@ import {
   createRoutesFromElements,
   
 } from "react-router-dom";
+import Contact from "./components/Contact.jsx"
+import "./responsive.css"
 
 
 
@@ -51,6 +51,7 @@ function App() {
              <Route path='/teams/:team'  element={<TeamsDashboard/>} />
              <Route path='/iuw4g4V3jlcs47lZUvHhww=='  element={<Dashboard/>} />
              <Route path='/iuw4g4V3jlcs47lZUvHhww==/:id'  element={<EditForm/>} />
+             <Route path='/contactUs'  element={<Contact/>} />
              
            
              <Route path='*' element={<PageNotFound/>}/>

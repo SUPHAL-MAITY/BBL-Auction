@@ -1,0 +1,30 @@
+/* Styles only till 480px */
+
+
+@media only screen and (max-width: 480px) {
+    .contact_container{
+        
+        width: 80%;
+        margin:  5% auto;
+        background-color:#F8EDE3 ;
+        border-radius: 16px;
+    
+      }
+      .contact_content{
+        padding: 2%;
+      }
+    
+      .contact_title{
+        font-size: 20px;
+        font-family:  sans-serif;
+    
+      }
+    
+      .contact_para{
+        font-size: 16px;
+        line-height: 24px;
+      }
+    
+    
+   
+  }
