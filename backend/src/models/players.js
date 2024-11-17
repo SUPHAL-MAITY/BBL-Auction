@@ -65,19 +65,7 @@ const playerSchema = new Schema({
 },{timestamps:true})
 
 
-playerSchema.virtual("age").get(function(){
-  const today=new Date();
-  const birthDay=new Date(this.dob);
 
-
-  let age= today.getFullYear() - birthDay.getFullYear();
-  const monthDifference=today.getMonth()- birthDay.getMonth()
-
-  if(monthDifference <0 || (monthDifference===0 && today.getDate()<birthDay.getDate())){
-    age--
-  }
-  return age;
-})
 
 
 

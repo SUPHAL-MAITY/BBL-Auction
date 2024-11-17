@@ -23,6 +23,9 @@ import {
 import Contact from "./components/Contact.jsx"
 import "./responsive.css"
 import TermsandCondition from "./components/TermsandCondition.jsx"
+import ProtectedRotes from "./utils/ProtectedRoutes.jsx"
+import FormControl from "./components/FormControl.jsx"
+import PlayerRegistrationForm from "./components/PlayerRegistrationForm.jsx"
 
 
 
@@ -54,9 +57,16 @@ function App() {
              <Route path='/iuw4g4V3jlcs47lZUvHhww==/:id'  element={<EditForm/>} />
              <Route path='/contactUs'  element={<Contact/>} />
              <Route path='/termsandcondition'  element={<TermsandCondition/>} />
+             <Route path='/player-registration'  element={<PlayerRegistrationForm/>} />
              
            
              <Route path='*' element={<PageNotFound/>}/>
+
+
+             <Route  element={<ProtectedRotes/>}>
+                  <Route path='/form-control' element={<FormControl/>} />
+
+             </Route>
 
             
 

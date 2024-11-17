@@ -41,7 +41,7 @@ const Login = () => {
       if (data) {
         alert("User logged in  successfully");
         console.log(data)
-        localStorage.setItem("id",data?.data?._id,1000)
+        localStorage.setItem("id",data?.data?._id)
         window.location.reload()
       }
       console.log("user");
