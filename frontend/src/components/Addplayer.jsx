@@ -4,7 +4,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 
 const Addplayer = () => {
-  const [sl, setSl] = useState(0);
+  // const [sl, setSl] = useState(0);
   const [name, setName] = useState("");
   const [nickName, setNickName] = useState("");
   const [dob, setDob] = useState("");
@@ -20,9 +20,9 @@ const Addplayer = () => {
 
   // sl,name, nickName, dob,role,url, batting, bowling,jersey,pincode, whatsapp
 
-  useEffect(() => {
-    getPlayerCount();
-  }, []);
+  // useEffect(() => {
+  //   getPlayerCount();
+  // }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -30,7 +30,7 @@ const Addplayer = () => {
       const { data } = await axios.post(
         `${import.meta.env.VITE_API}/api/user/add`,
         {
-          sl,name, nickName, dob,role, batting, bowling,jersey,pincode, whatsapp,url
+          name, nickName, dob,role, batting, bowling,jersey,pincode, whatsapp,url
 
         }
       );
@@ -44,21 +44,22 @@ const Addplayer = () => {
     }
   };
 
-  const getPlayerCount = async () => {
-    try {
-      const { data } = await axios.get(
-        `${import.meta.env.VITE_API}/api/admin/count`
-      );
 
-      console.log(data);
-      setSl(data?.count +1);
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  // const getPlayerCount = async () => {
+  //   try {
+  //     const { data } = await axios.get(
+  //       `${import.meta.env.VITE_API}/api/admin/count`
+  //     );
+
+  //     console.log(data);
+  //     setSl(data?.count +1);
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
 
 
-  
+
 
   return (
     <div>
@@ -72,7 +73,7 @@ const Addplayer = () => {
             <div className="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
               <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
                 <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="mt-2 font-serif   ">
+                  {/* <div className="mt-2 font-serif   ">
                     <input
                       id="sl"
                       name="sl"
@@ -82,7 +83,7 @@ const Addplayer = () => {
                       placeholder="Unique Serial number"
                       className="text-center  block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                     />
-                  </div>
+                  </div> */}
 
                   <div className="mt-2 font-serif   ">
                     <input

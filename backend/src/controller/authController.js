@@ -66,7 +66,6 @@ const loginController=asyncHandler(async(req,res)=>{
  const user=await User.findOne({userName})
  
  
- 
  if(!user){
      throw new ApiError(404,"User does not exist")
  }
@@ -74,10 +73,6 @@ const loginController=asyncHandler(async(req,res)=>{
  if(password !== user.password){
      throw new ApiError(400,"Password is wrong during login")
  }
- 
- 
- 
- 
  
  
  
