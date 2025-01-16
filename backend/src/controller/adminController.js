@@ -70,6 +70,7 @@ const createPlayer=asyncHandler(async(req,res)=>{
     })
     
     await newPlayer.save()
+    
 
     res.status(200).json(new ApiResponse(200,newPlayer,"New  player created successfully"))
 

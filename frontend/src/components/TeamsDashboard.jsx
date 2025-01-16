@@ -11,7 +11,7 @@ const TeamsDashboard = () => {
         
          
       
-         <div className="bg-slate-100 flex-initial w-full overflow-x-auto   md:w-4/5 lg:w-full mt-7 text-center ml-2 text-red-500 text-xl sm:text-2xl font-serif italic hover:not-italic">
+         <div className="bg-slate-100 flex-initial w-full overflow-x-auto   md:w-4/5 lg:w-full  text-center ml-2 text-red-500 text-xl sm:text-2xl font-serif italic hover:not-italic">
       
           <PlayersByTeam />
         
